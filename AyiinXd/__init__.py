@@ -199,7 +199,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/PunyaAlby/Userbot.git")
+    "https://github.com/PunyaAlby/Projects.git")
 
 # Custom Name Sticker Pack
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
@@ -630,10 +630,11 @@ with bot:
             ],
             [
                 Button.inline(get_string("help_2"), data="reopen"),
+                Button.url(get_string("help_7"), url=f"t.me/{botusername}?start="),
             ],
             [
-                Button.inline(get_string("help_6"), data="yins_langs"),
-                Button.url(get_string("help_7"), url=f"t.me/{botusername}?start="),
+                Button.inline(get_string("help_6"), url=f"t.me/ruangdiskusikami"),
+                Button.url(get_string("help_11"), url=f"t.me/ruangprojects"),
             ],
             [Button.inline(get_string("help_8"), data="close")],
         ]
@@ -1051,10 +1052,13 @@ with bot:
 """,
                                  buttons=[
                                      [
-                                         Button.inline("㊪ ʙᴛᴘᴍ ㊪",
-                                                       data="btpmayiin"),
-                                         Button.inline("㊪ ʏɪɴs ʙᴏᴋᴇᴘ ㊪",
-                                                       data="yinsbokep")],
+                                         Button.inline("㊪ BTPM ㊪",
+                                                       data="btpmayiin")],
+                                     [
+                                         Button.inline("㊪ Bahasa ㊪",
+                                                       data="yins_langs"),
+                                         Button.inline("㊪ String ㊪",
+                                                       data="yins_string")],
                                      [custom.Button.inline(
                                          "ʙᴀᴄᴋ", data="gcback")],
                                  ]
@@ -1095,16 +1099,16 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"yinsbokep")
+                data=re.compile(rb"yins_langs")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-✘ **Perintah yang tersedia di yins bokep** ✘
-  »  **Perintah : **`{cmd}bokp`
-  »  **Kegunaan :** __Untuk Mengirim bokp secara random.__
+✘ **Perintah Bahasa** ✘
+  »  **Perintah :** `{cmd}lang`
+  »  **Kegunaan : **Untuk Mengubah Bahasa.
 """)
                 await event.edit(
                     text,
@@ -1117,16 +1121,14 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"yins_langs")
+                data=re.compile(rb"yins_string")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-✘ **Perintah yang tersedia di tools** ✘
-  »  **Perintah :** `{cmd}lang`
-  »  **Kegunaan : **Untuk Mengubah Bahasa.
+✘ **Perintah String** ✘
   »  **Perintah :** `{cmd}string`
   »  **Kegunaan : **Untuk Membuat String Session.
 """)
@@ -1134,7 +1136,7 @@ with bot:
                     text,
                     file=logo,
                     link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="gcback")])
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="konten_yins")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
