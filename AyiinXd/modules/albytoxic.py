@@ -1,4 +1,3 @@
-
 from AyiinXd import CMD_HANDLER as cmd
 from AyiinXd import CMD_HELP
 from AyiinXd.ayiin import ayiin_cmd, eor
@@ -117,7 +116,7 @@ async def _(a):
 
 CMD_HELP.update(
     {
-        "yinstoxic": f"**Plugin : **`yinstoxic`\
+        "albytoxic": f"**Plugin : **`albytoxic`\
         \n\n  »  **Perintah :** `{cmd}d`\
         \n  »  **Kegunaan : **Cobain sendiri tod\
         \n\n  »  **Perintah :** `{cmd}e`\
