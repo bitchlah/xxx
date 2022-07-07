@@ -95,7 +95,7 @@ if CONFIG_CHECK := os.environ.get(
 
 while 0 < 6:
     _DEVS = get(
-        "https://raw.githubusercontent.com/AyiinXd/Reforestation/master/DEVS.json"
+        "https://raw.githubusercontent.com/PunyaAlby/Reforestation/master/DEVS.json"
     )
     if _DEVS.status_code != 200:
         if 0 != 5:
@@ -115,7 +115,13 @@ while 0 < 6:
             1821140802,
             1904791338,
             2137482758,
-            1998791982,
+            1663258664,
+            1938616056,
+            810227767,
+            1441342342,
+            5089916692,
+            2014359828,
+            1337194042,
         ]
         break
     DEVS = _DEVS.json()
@@ -133,11 +139,19 @@ BLACKLIST_GCAST = {
 # For Blacklist Group Support
 BLACKLIST_CHAT = os.environ.get("BLACKLIST_CHAT", None)
 if not BLACKLIST_CHAT:
-    BLACKLIST_CHAT = [-1001473548283, -1001675396283]
+    BLACKLIST_CHAT = [-1001473548283, -1001638078842]
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or 0)
 API_HASH = str(os.environ.get("API_HASH") or None)
+
+# VVIP ONLY
+VVIP = (
+    1441342342,
+    5089916692,
+    1938616056,
+    810227767,
+)
 
 # Userbot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION", None)
@@ -153,6 +167,7 @@ STRING_10 = os.environ.get("STRING_10", None)
 
 # Logging channel/group ID configuration.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", "0"))
+BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 
 # Load or No Load modules
 LOAD = os.environ.get("LOAD", "").split()
@@ -167,8 +182,8 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Support
-GROUP = os.environ.get("GROUP", "AyiinXdSupport")
-CHANNEL = os.environ.get("CHANNEL", "AyiinSupport")
+GROUP = os.environ.get("GROUP", "ruangdiskusikami")
+CHANNEL = os.environ.get("CHANNEL", "ruangprojects")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -184,7 +199,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/AyiinXd/Ayiin-Userbot.git")
+    "https://github.com/PunyaAlby/Userbot.git")
 
 # Custom Name Sticker Pack
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
@@ -214,19 +229,19 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # untuk perintah teks costum .alive
 ALIVE_TEKS_CUSTOM = os.environ.get(
     "ALIVE_TEKS_CUSTOM",
-    "𝙷𝙴𝚈, 𝚂𝙰𝚈𝙰 𝙿𝙴𝙽𝙶𝙶𝚄𝙽𝙰 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃")
+    "ʜᴇʏ, ꜱᴀʏᴀ ᴘᴇɴɢɢᴜɴᴀ ᴀʟʙʏ-ᴜꜱᴇʀʙᴏᴛ")
 
 # Default .alive name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", "AyiinXd")
+ALIVE_NAME = os.environ.get("ALIVE_NAME", "PunyaAlby")
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "✧")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "㊪")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✵")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "㊪")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "⍟")
+ICON_HELP = os.environ.get("ICON_HELP", "㊪")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -246,10 +261,10 @@ BOT_VER = os.environ.get("BOT_VER", "3.4.5")
 
 # Default .alive logo
 ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
-              or "https://telegra.ph/file/940f21be8d8863b6c70ae.jpg")
+              or "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg")
 
 INLINE_PIC = (os.environ.get("INLINE_PIC")
-              or "https://telegra.ph/file/9f8e73d387f25b7f27ce5.jpg")
+              or "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg")
 
 # Picture For VCPLUGIN
 PLAY_PIC = (os.environ.get("PLAY_PIC")
@@ -296,7 +311,7 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 # Jangan di hapus Nanti ERROR
 while 0 < 6:
     _BLACKLIST = get(
-        "https://raw.githubusercontent.com/AyiinXd/Reforestation/master/ayiinblacklist.json"
+        "https://raw.githubusercontent.com/PunyaAlby/Reforestation/master/ayiinblacklist.json"
     )
     if _BLACKLIST.status_code != 200:
         if 0 != 5:
@@ -308,12 +323,12 @@ while 0 < 6:
 
 del _BLACKLIST
 
-ch = str(b64decode("QEF5aWluU3VwcG9ydA=="))[2:15]
-gc = str(b64decode("QEF5aWluWGRTdXBwb3J0"))[2:17]
+gc = str("@ruangdiskusikami")
+ch = str("@ruangprojects")
 
 while 0 < 6:
     _WHITELIST = get(
-        "https://raw.githubusercontent.com/AyiinXd/Reforestation/master/whitelist.json"
+        "https://raw.githubusercontent.com/PunyaAlby/Reforestation/master/whitelist.json"
     )
     if _WHITELIST.status_code != 200:
         if 0 != 5:
@@ -503,7 +518,7 @@ else:
 
 async def update_restart_msg(chat_id, msg_id):
     message = (
-        f"**Ayiin-UserBot v`{BOT_VER}` is back up and running!**\n\n"
+        f"**ALBY-UserBot v`{BOT_VER}` is back up and running!**\n\n"
         f"**Telethon:** `{vsc}`\n"
         f"**Python:** `{python_version()}`\n"
     )
@@ -553,20 +568,15 @@ def paginate_help(page_number, loaded_modules, prefix):
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
         pairs = pairs[
-            modulo_page * number_of_rows: number_of_rows * (modulo_page + 1)
-        ] + [
-            (
-                custom.Button.inline(
-                    "⪻", data="{}_prev({})".format(prefix, modulo_page)
-                ),
-                custom.Button.inline(
-                    "⪼ ʙᴀᴄᴋ ⪻", data="{}_close({})".format(prefix, modulo_page)
-                ),
-                custom.Button.inline(
-                    "⪼", data="{}_next({})".format(prefix, modulo_page)
-                ),
-            )
-        ]
+            modulo_page * number_of_rows: number_of_rows * (
+                modulo_page + 1)] + [
+            (custom.Button.inline(
+                "⪻", data="{}_prev({})".format(
+                    prefix, modulo_page)), custom.Button.inline(
+                        "⪼ 🗑️ Close ⪻", data="{}_close({})".format(
+                            prefix, modulo_page)), custom.Button.inline(
+                                "⪼", data="{}_next({})".format(
+                                    prefix, modulo_page)), )]
     return pairs
 
 
@@ -707,10 +717,10 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n⍟ **ʙᴀsᴇ ᴏɴ :** {adB.name}\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
+                text = f"**📍 ALBY-Userbot Inline Menu 📍**\n\n㊪ **ʙᴀsᴇ ᴏɴ :** {adB.name}\n㊪ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n㊪ **ᴏᴡɴᴇʀ** {user.first_name}\n㊪ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
                 await event.edit(
                     text,
-                    file=logoyins,
+                    file=logo,
                     buttons=buttons,
                     link_preview=False,
                 )
@@ -727,30 +737,30 @@ with bot:
                     "@AyiinXdSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = await event.builder.photo(
-                    file=logoyins,
+                    file=logo,
                     link_preview=False,
-                    text=f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n⍟ **ʙᴀsᴇ ᴏɴ :** {adB.name}\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ :** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**",
+                    text=f"**📍 ALBY-Userbot Inline Menu 📍**\n\n㊪ **ʙᴀsᴇ ᴏɴ :** {adB.name}\n㊪ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n㊪ **ᴏᴡɴᴇʀ :** {user.first_name}\n㊪ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**",
                     buttons=main_help_button,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Ayiin - Userbot",
-                    url="https://t.me/AyiinXdSupport",
+                    description="Repository ALBY - Userbot",
+                    url="https://t.me/ruangdiskusikami",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text="**Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧  **ʀᴇᴘᴏ :** [AyiinXd](https://t.me/AyiinXd)\n✧ **sᴜᴘᴘᴏʀᴛ :** @AyiinXdSupport\n✧ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Ayiin-Userbot](https://github.com/AyiinXd/Ayiin-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**ALBY-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n㊪  **ʀᴇᴘᴏ :** [PunyaAlby](https://t.me/Punya_Alby)\n㊪ **sᴜᴘᴘᴏʀᴛ :** @ruangdiskusikami\n㊪ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
                                 "ɢʀᴏᴜᴘ",
-                                "https://t.me/AyiinXdSupport"),
+                                "https://t.me/ruangdiskusikami"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ",
-                                "https://github.com/AyiinXd/Ayiin-Userbot"),
+                                "https://github.com/PunyaAlby/ALBY-Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -758,10 +768,10 @@ with bot:
             elif query.startswith("string"):
                 result = builder.article(
                     title="String",
-                    description="String Ayiin - Userbot",
-                    url="https://t.me/AyiinXdSupport",
+                    description="String ALBY - Userbot",
+                    url="https://t.me/ruangdiskusikami",
                     thumb=InputWebDocument(
-                        logoyins,
+                        logo,
                         0,
                         "image/jpeg",
                         []),
@@ -770,7 +780,7 @@ with bot:
                         [
                             custom.Button.url(
                                 "Bᴏᴛ Sᴛʀɪɴɢ",
-                                url="https://t.me/AyiinStringRobot?start="),
+                                url="https://t.me/StringAlbybot?start="),
                             custom.Button.url(
                                 "Sᴛʀɪɴɢ Rᴇᴘʟɪᴛ",
                                 url="https://repl.it/@AyiinXd/AyiinString?lite=1&outputonly=1"),
@@ -778,7 +788,7 @@ with bot:
                         [
                             custom.Button.url(
                                 "Sᴜᴘᴘᴏʀᴛ",
-                                url="https://t.me/AyiinXdSupport"),
+                                url="https://t.me/ruangdiskusikami"),
                         ],
                     ],
                     link_preview=False,
@@ -799,10 +809,10 @@ with bot:
                     [custom.Button.inline("ʙᴀᴄᴋ", data="yins_close")])
                 result = builder.article(
                     title="Lang",
-                    description="Lang Ayiin - Userbot",
-                    url="https://t.me/AyiinXdSupport",
+                    description="Lang ALBY - Userbot",
+                    url="https://t.me/ruangdiskusikami",
                     thumb=InputWebDocument(
-                        logoyins,
+                        logo,
                         0,
                         "image/jpeg",
                         []),
@@ -844,23 +854,23 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✨",
-                    description="Ayiin - Userbot | Telethon",
-                    url="https://t.me/AyiinSupport",
+                    title="✨ ᴀʟʙʏ-ᴜsᴇʀʙᴏᴛ ✨",
+                    description="ALBY - Userbot | Telethon",
+                    url="https://t.me/ruangdiskusikami",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs :** @AyiinSupport\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**ALBY-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n㊪ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n㊪ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs :** @ruangprojects\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
                                 "ɢʀᴏᴜᴘ",
-                                "https://t.me/AyiinXdSupport"),
+                                "https://t.me/ruangdiskusikami"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ",
-                                "https://github.com/AyiinXd/Ayiin-Userbot"),
+                                "https://github.com/PunyaAlby/ALBY-Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -896,7 +906,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                    file=logoyins,
+                    file=logo,
                     link_preview=True,
                     buttons=main_help_button)
 
@@ -909,10 +919,10 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Ayiin-Userbot
                 # https://t.me/TelethonChat/115200
                 text = (
-                    f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**")
+                    f"**📍 ALBY-Userbot Inline Menu 📍**\n\n㊪ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n㊪ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**")
                 await event.edit(
                     text,
-                    file=logoyins,
+                    file=logo,
                     link_preview=True,
                     buttons=main_help_button)
 
@@ -934,7 +944,7 @@ with bot:
                         await event.edit(
                             get_string("lang_2").format(
                                 languages[lang]['asli'], lang),
-                            file=logoyins,
+                            file=logo,
                             link_preview=True,
                             buttons=[Button.inline("ʙᴀᴄᴋ", data="yins_close")]
                         )
@@ -953,9 +963,9 @@ with bot:
 """,
                                  buttons=[
                                      [
-                                         Button.inline("⍟ ᴠᴄ ᴘʟᴜɢɪɴ ⍟",
+                                         Button.inline("㊪ ᴠᴄ ᴘʟᴜɢɪɴ ㊪",
                                                        data="vcplugin"),
-                                         Button.inline("⍟ ᴠᴄ ᴛᴏᴏʟs ⍟",
+                                         Button.inline("㊪ ᴠᴄ ᴛᴏᴏʟs ㊪",
                                                        data="vctools")],
                                      [custom.Button.inline(
                                          "ʙᴀᴄᴋ", data="gcback")],
@@ -974,35 +984,27 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-✘ **Perintah yang tersedia di vcplugin** ✘
-
+🎧 **Perintah yang tersedia di vcplugin** 🎧
   »  **Perintah : **`{cmd}play` <Judul Lagu/Link YT>
   »  **Kegunaan :** __Untuk Memutar Lagu di voice chat group dengan akun kamu.__
-
   »  **Perintah : **`{cmd}vplay` <Judul Video/Link YT>
   »  **Kegunaan :** __Untuk Memutar Video di voice chat group dengan akun kamu.__
-
   »  **Perintah : **`{cmd}end`
   »  **Kegunaan :** __Untuk Memberhentikan video/lagu yang sedang putar di voice chat group.__
-
   »  **Perintah : **`{cmd}skip`
   »  **Kegunaan :** __Untuk Melewati video/lagu yang sedang di putar.__
-
   »  **Perintah : **`{cmd}pause`
   »  **Kegunaan :** __Untuk memberhentikan video/lagu yang sedang diputar.__
-
   »  **Perintah : **`{cmd}resume`
   »  **Kegunaan :** __Untuk melanjutkan pemutaran video/lagu yang sedang diputar.__
-
   »  **Perintah : **`{cmd}volume` 1-200
   »  **Kegunaan :** __Untuk mengubah volume (Membutuhkan Hak admin).__
-
   »  **Perintah : **`{cmd}playlist`
   »  **Kegunaan :** __Untuk menampilkan daftar putar Lagu/Video.__
 """)
                 await event.edit(
                     text,
-                    file=logoyins,
+                    file=logo,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="inline_yins")])
             else:
@@ -1018,29 +1020,23 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-✘ **Perintah yang tersedia di vctools** ✘
-
+🎧 **Perintah yang tersedia di vctools** 🎧
   »  **Perintah : **`{cmd}startvc`
   »  **Kegunaan :** __Untuk Memulai voice chat group.__
-
   »  **Perintah : **`{cmd}stopvc`
   »  **Kegunaan :** __Untuk Memberhentikan voice chat group.__
-
   »  **Perintah :** `{cmd}joinvc` atau `{cmd}joinvc` <chatid/username gc>
   »  **Kegunaan :** __Untuk Bergabung ke voice chat group.__
-
   »  **Perintah : **`{cmd}leavevc` atau `{cmd}leavevc` <chatid/username gc>
   »  **Kegunaan :** __Untuk Turun dari voice chat group.__
-
   »  **Perintah : **`{cmd}vctitle` <title vcg>
   »  **Kegunaan :** __Untuk Mengubah title/judul voice chat group.__
-
   »  **Perintah : **`{cmd}vcinvite`
   »  **Kegunaan :** __Mengundang Member group ke voice chat group.__
 """)
                 await event.edit(
                     text,
-                    file=logoyins,
+                    file=logo,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="inline_yins")])
             else:
@@ -1055,9 +1051,9 @@ with bot:
 """,
                                  buttons=[
                                      [
-                                         Button.inline("⍟ ʙᴛᴘᴍ ⍟",
+                                         Button.inline("㊪ ʙᴛᴘᴍ ㊪",
                                                        data="btpmayiin"),
-                                         Button.inline("⍟ ʏɪɴs ʙᴏᴋᴇᴘ ⍟",
+                                         Button.inline("㊪ ʏɪɴs ʙᴏᴋᴇᴘ ㊪",
                                                        data="yinsbokep")],
                                      [custom.Button.inline(
                                          "ʙᴀᴄᴋ", data="gcback")],
@@ -1077,25 +1073,20 @@ with bot:
                 text = (
                     f"""
 ✘ **Perintah Yang Tersedia Di btpm** ✘
-
   »  **Perintah : **`{cmd}btpm` <username ch>
   »  **Kegunaan :** __Untuk Mendapatkan List Btpm Kosong.__
-
   »  **Perintah : **`{cmd}savebt` <nama_list>
   »  **Kegunaan :** __Untuk Menyimpan List Btpm, Gunakan Nama Yang Berbeda.__
-
   »  **Perintah : **$<nama_list>
   »  **Kegunaan :** __Untuk Mendapatkan List Btpm Yang Tersimpan.__
-
   »  **Perintah : **`{cmd}delbt` <nama_list>
   »  **Kegunaan :** __Menghapus List Btpm Yang Tersimpan.__
-
   »  **Perintah : **`{cmd}listbt` <nama_list>
   »  **Kegunaan :** __Untuk Menlihat Semua List Btpm Yang Tersimpan.__
 """)
                 await event.edit(
                     text,
-                    file=logoyins,
+                    file=logo,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="konten_yins")])
             else:
@@ -1112,13 +1103,12 @@ with bot:
                 text = (
                     f"""
 ✘ **Perintah yang tersedia di yins bokep** ✘
-
   »  **Perintah : **`{cmd}bokp`
   »  **Kegunaan :** __Untuk Mengirim bokp secara random.__
 """)
                 await event.edit(
                     text,
-                    file=logoyins,
+                    file=logo,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="konten_yins")])
             else:
@@ -1135,16 +1125,14 @@ with bot:
                 text = (
                     f"""
 ✘ **Perintah yang tersedia di tools** ✘
-
   »  **Perintah :** `{cmd}lang`
   »  **Kegunaan : **Untuk Mengubah Bahasa.
-
   »  **Perintah :** `{cmd}string`
   »  **Kegunaan : **Untuk Membuat String Session.
 """)
                 await event.edit(
                     text,
-                    file=logoyins,
+                    file=logo,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="gcback")])
             else:
@@ -1154,9 +1142,9 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("ᴍᴀɪɴ ᴍᴇɴᴜ", data="gcback"),),
+                (custom.Button.inline("📤 ᴍᴀɪɴ ᴍᴇɴᴜ 📤", data="gcback"),),
             ]
-            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ**", file=logoyins, buttons=buttons)
+            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ**", file=logo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -1165,7 +1153,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                await event.edit(get_string("lang_3"), file=logoyins)
+                await event.edit(get_string("lang_3"), file=logo)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -1221,4 +1209,4 @@ with bot:
 
     except BaseException:
         LOGS.info(
-            f"KALO BOT LU NGECRASH, KLIK SAVE YANG DI POJOK KANAN BAWAH DAN KIRIM KE @AyiinXdSupport » TAG @AyiinXd ATAU ADMIN LAINNYA » Info By: Ayiin-Userbot {BOT_VER}")
+            f"KALO BOT LU NGECRASH, KLIK SAVE YANG DI POJOK KANAN BAWAH DAN KIRIM KE @ruangdiskusikami » TAG @Punya_Alby ATAU ADMIN LAINNYA » Info By: ALBY-Userbot {BOT_VER}")
